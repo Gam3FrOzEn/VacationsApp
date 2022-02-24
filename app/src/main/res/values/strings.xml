@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Vacations App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_vacation">Add Vacation</string>
+    <string name="desired_vacations">Desired Vacations</string>
+    <string name="hotel_name">Hotel Name</string>
+    <string name="location">Location</string>
+    <string name="amount">Money Amount</string>
+    <string name="description">Description</string>
+    <string name="notifications">Notifications</string>
+    <string name="create_notification">Create Notification</string>
+    <string name="title">Title</string>
+    <string name="select_notification_date">Select Notification Date</string>
+    <string name="select_notification_time">Select Notification Time</string>
+    <string name="name">Name</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="update_vacation">Update Vacation</string>
+</resources>
