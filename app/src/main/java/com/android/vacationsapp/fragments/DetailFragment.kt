@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.android.vacationsapp.R
 import kotlinx.android.synthetic.main.fragment_detail.view.*
 import com.android.vacationsapp.models.Vacation
@@ -39,6 +40,25 @@ class DetailFragment : Fragment() {
 
         setHasOptionsMenu(true)
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_notification, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            requireActivity().supportFragmentManager.popBackStack(
+                null,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+        }else if(item.itemId==R.id.action_notification){
+            (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.main_layout, NotificationFragment.newInstance(vacation!!))
+                .addToBackStack("n").commit()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {
